@@ -1,6 +1,8 @@
 // Navbar code start
 const mobButton = document.querySelector("#nav-btn");
+const mobSearchButton = document.querySelector("#search-nav-btn");
 const mobNav = document.querySelector("#mobNav");
+const mobSearch = document.querySelector("#searchNav");
 const mobProdBtn = document.querySelector("#mob-products");
 const mobProdList = document.querySelector("#mob-products-list");
 const deskProdBtn = document.querySelector("#desktop-prod-button");
@@ -14,7 +16,21 @@ if (mobButton) {
             body.classList.add("overflow-hidden");
             return;
         }
+
         mobNav.classList.add("-translate-y-full");
+        body.classList.remove("overflow-hidden");
+    });
+}
+
+if (mobSearchButton) {
+    mobSearchButton.addEventListener("click", function () {
+        if (mobSearch.classList.contains("-translate-y-full")) {
+            mobSearch.classList.remove("-translate-y-full");
+            body.classList.add("overflow-hidden");
+            return;
+        }
+
+        mobSearch.classList.add("-translate-y-full");
         body.classList.remove("overflow-hidden");
     });
 }
